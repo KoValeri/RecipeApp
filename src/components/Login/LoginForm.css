@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "HYWenHei";
+  src: url("../../../public/HYWenHei/HYWenHei.ttf");
+}
+
+.login-page__container{
+    background-color: #fd974f;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: HYWenHei;
+}
+
+.login-form{
+    border: 2px solid #fef2e4;
+    border-radius: 12px;
+    padding: 24px;
+    font-size: 18px;
+}
+
+.login-form__field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.login-form__input{
+    width: 200px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    padding: 6px 8px;
+    background-color: #fef2e4;
+    margin-left: 30px;
+}
+
+.login-form__button{
+    display: flex;
+    justify-content: center;
+}
+
+.login-form__button button{
+border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    color: #3e2c1e;
+    font-family: HYWenHei;
+    background-color: #fef2e4;
+    border: none;
+}

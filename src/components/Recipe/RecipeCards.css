@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "HYWenHei";
+  src: url("../../../public/HYWenHei/HYWenHei.ttf");
+}
+
+.recipe-list__cards{
+    display: flex;
+    gap: 90px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.recipe-card{
+    width: 340px;
+    height: 395px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #fef2e4;
+}
+
+.recipe-card:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.recipe-card__image {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+}
+
+.recipe-card__info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.recipe-card__title{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: HYWenHei;
+}
+
+.recipe-card__meta{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.recipe-card__rating{
+    color: #fd974f;
+}
+
+.recipe-card__tags{
+    font-size: 0.75em;
+    color: #805a3b; 
+}
+

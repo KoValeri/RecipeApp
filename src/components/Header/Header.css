@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "HYWenHei";
+  src: url("../../../public/HYWenHei/HYWenHei.ttf");
+}
+
+.header{
+    background-color: #fd974f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    height: 70px;
+}
+
+.header__container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.header__title{
+    font-family: HYWenHei;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header__search{
+    width: 40%;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 6px 8px;
+    background-color: #fef2e4;
+}
+
+.header__links{
+    display: flex;
+    gap: 20px;
+}
