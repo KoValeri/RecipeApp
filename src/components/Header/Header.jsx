@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './Header.css'
+import { ROUTES } from "@/configs/routesConfig";
 
 export default function Header() {
   return (
@@ -16,10 +17,10 @@ export default function Header() {
             <nav className="header__nav">
                 <ul className="header__links">
                     <li>
-                        <Link to='/'>Home</Link>
+                        <Link to={ROUTES.HOME}>Home</Link>
                     </li>
                     <li>
-                        <Link to='/login'>Login</Link>
+                        <Link to={ROUTES.LOGIN}>Login</Link>
                     </li>
                 </ul>
             </nav>

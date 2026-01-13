@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css'
+import { ROUTES } from "@/configs/routesConfig";
 
 export default function RecipeCard() {
     const navigate = useNavigate();
 
     function handleSubmit(event){
         event.preventDefault();
-        navigate('/');
+        navigate(ROUTES.HOME);
     }
 
   return (
