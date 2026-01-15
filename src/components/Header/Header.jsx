@@ -1,12 +1,38 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import './Header.css'
 import { ROUTES } from "@/configs/routesConfig";
+import userIcon from '@/icons/user.png';
 
 export default function Header() {
+    const isLogin = true;
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const menuRef = useRef();
+    const location = useLocation();
+
+    useEffect(() => {
+        function handleClickOutside(event){
+            if(menuRef.current && !menuRef.current.contains(event.target)){
+                setIsMenuOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [])
+
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location])
+
+    function toggleMenu(){
+        setIsMenuOpen(prev => !prev);
+    }
+
   return (
     <header className='header'>
         <div className='header__container'>
-            <div className='header__title'>Recipes</div>
+            <Link className='header__title'>Recipes</Link>
 
             <input className='header__search'
             name="search"
@@ -16,11 +42,19 @@ export default function Header() {
 
             <nav className="header__nav">
                 <ul className="header__links">
-                    <li>
-                        <Link to={ROUTES.HOME}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to={ROUTES.LOGIN}>Login</Link>
+                    <li ref={menuRef} className="header__user">
+                        {isLogin ? (
+                            <>
+                                <img src={userIcon} alt="userIcon" className="header__userIcon" onClick={toggleMenu}/>
+
+                                <div className={`header__userMenu ${ isMenuOpen ? "open" : "" }`}>
+                                    <Link to={ROUTES.FAVORITES}>Favorites</Link>
+                                    <button>Logout</button>
+                                </div>
+                            </>
+                        ) : (
+                            <Link to={ROUTES.LOGIN}>Login</Link>
+                        )}
                     </li>
                 </ul>
             </nav>

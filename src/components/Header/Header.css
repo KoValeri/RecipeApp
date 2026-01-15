@@ -1,12 +1,13 @@
 @font-face {
   font-family: "HYWenHei";
   src: url("../../../public/HYWenHei/HYWenHei.ttf");
+  font-display: swap;
 }
 
 .header{
     background-color: #fd974f;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    height: 70px;
+    height: 80px;
 }
 
 .header__container{
@@ -25,7 +26,8 @@
 .header__search{
     width: 40%;
     border: none;
-    border-radius: 15px;
+    border-radius: 19px;
+    height: 38px;
     outline: none;
     font-size: 0.95rem;
     padding: 6px 8px;
@@ -35,4 +37,43 @@
 .header__links{
     display: flex;
     gap: 20px;
+}
+
+.header__user{
+    position: relative;
+}
+
+.header__userIcon{
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
+
+.header__userMenu{
+    position: absolute;
+    border: 3px solid #3e2c1e;
+    background-color: #fd974f;
+    height: 85px;
+    width: 95px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    right: 0; 
+}
+
+.header__userMenu.open{
+    display: flex;
+}
+
+.header__userMenu button{
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    color: #3e2c1e;
+    background-color: #fd974f;
+    border: none;
 }

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "HYWenHei";
+  src: url("../../../public/HYWenHei/HYWenHei.ttf");
+}
+
+.promo-block{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.promo-block__title{
+    font-family: HYWenHei;
+}

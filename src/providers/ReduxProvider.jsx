@@ -4,7 +4,7 @@ import { store } from '@/store';
 export function ReduxProvider({ children }) {
     return(
         <Provider store={store}>
-            {children};
+            {children}
         </Provider>
     );
 }

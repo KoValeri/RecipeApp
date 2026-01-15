@@ -1,9 +1,9 @@
 import RecipeCard from './RecipeCard.jsx';
 import './RecipeCards.css'
-import { useGetRecipesSmallQuery } from '../../services/recipesApi.js';
+import { useGetRecipesQuery } from '../../services/recipesApi.js';
 
 export default function RecipeList() {
- const { data: recipes, isLoading } = useGetRecipesSmallQuery();
+ const { data: recipes, isLoading } = useGetRecipesQuery();
 
   return (
     <>

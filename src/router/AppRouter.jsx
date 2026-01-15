@@ -5,30 +5,30 @@ import RootLayout from "@/pages/RootLayout";
 import HomePage from "@/pages/HomePage";
 import LoginPage from '@/pages/LoginPage';
 import RecipePage from '@/pages/RecipePage';
-import PublickPage from '@/pages/PublickPage';
+import RegisterPage from "@/pages/RegisterPage";
+import FavoritesPage from "@/pages/FavoritesPage";
 import { ROUTES } from "@/configs/routesConfig";
 
-import PublicRoute from "@/router/PublicRoute";
 import PrivateRoute from "@/router/PrivateRoute";
 
 const isLogin = true;
 
 const router = createBrowserRouter([
+    { path: ROUTES.LOGIN, element: <LoginPage /> },
+    { path: ROUTES.REGISTER, element: <RegisterPage /> },
+
     {
-        element: <PublicRoute isLogin={isLogin}/>,
+        element: <RootLayout />,
         children: [
-            { path: ROUTES.LOGIN, element: <LoginPage />},
-            { path: ROUTES.PUBLICK, element: <PublickPage /> },
-        ],
-    },
-    { 
-        element: <PrivateRoute isLogin={isLogin}/>,
-        children: [
-            { path: ROUTES.HOME, element:  <RootLayout />,
-                children: [
-                    { path: ROUTES.HOME, element:  <HomePage /> },
-                    { path: ROUTES.RECIPE, element:  <RecipePage /> }     
-                ]
+            { path: ROUTES.HOME, element: <HomePage /> },
+            { path: ROUTES.RECIPE, element: <RecipePage /> },
+            {
+                path: ROUTES.FAVORITES,
+                element: (
+                <PrivateRoute isLogin={isLogin}>
+                    <FavoritesPage />
+                </PrivateRoute>
+                )
             },
         ]
     }

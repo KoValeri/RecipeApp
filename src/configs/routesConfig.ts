@@ -1,6 +1,7 @@
 export const ROUTES = {
-    PUBLICK: '/',
-    HOME: '/recipes',
-    RECIPE: '/recipes/recipe/:id',
+    HOME: '/',
+    RECIPE: '/recipe/:id',
     LOGIN: '/login',
+    REGISTER: '/register',
+    FAVORITES: '/favorites'
 }

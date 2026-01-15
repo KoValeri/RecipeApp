@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css'
 import { ROUTES } from "@/configs/routesConfig";
+import { Link } from "react-router-dom";
 
 export default function RecipeCard() {
     const navigate = useNavigate();
@@ -24,6 +25,10 @@ export default function RecipeCard() {
 
           <div className="login-form__button">
             <button type="submit">Login</button>
+          </div>
+
+          <div>
+            <span>Don't have an account? <Link to={ROUTES.REGISTER} className="login-form__register">Register</Link></span>
           </div>
     </form>
   );
