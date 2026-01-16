@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
     font-family: HYWenHei;
+    flex-direction: column;
 }
 
 .login-form{
@@ -59,4 +60,13 @@ border-radius: 15px;
 .login-form__register{
     color: #fef2e4;
     text-decoration: underline;
+}
+
+.login-form__error{
+    color: #c60000;
+    margin-top: 15px;
+}
+
+.login-form__error-hidden{
+    display: none;
 }
