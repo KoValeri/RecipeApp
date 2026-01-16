@@ -11,7 +11,7 @@ import { ROUTES } from "@/configs/routesConfig";
 
 import PrivateRoute from "@/router/PrivateRoute";
 
-const isLogin = true;
+const isLogin = false;
 
 const router = createBrowserRouter([
     { path: ROUTES.LOGIN, element: <LoginPage /> },
