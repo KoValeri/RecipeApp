@@ -1,9 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import './RegisterForm.css'
 import { ROUTES } from "@/configs/routesConfig";
+import { useDispatch } from 'react-redux';
+import { authActions } from '@/store/authSlice';
 
 export default function RecipeCard() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function handleSubmit(event){
         event.preventDefault();
@@ -12,13 +15,8 @@ export default function RecipeCard() {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const user = {
-          email, 
-          password,
-          isAuthenticated: false,
-        }
 
-        localStorage.setItem('user', JSON.stringify(user));
+        dispatch(authActions.register({email, password}));
     }
 
   return (

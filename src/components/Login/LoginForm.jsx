@@ -2,36 +2,40 @@ import { useNavigate } from 'react-router-dom';
 import './LoginForm.css'
 import { ROUTES } from "@/configs/routesConfig";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions } from '@/store/authSlice';
+import { useEffect, useRef } from 'react';
 
 export default function RecipeCard() {
     const navigate = useNavigate();
-    const [isUser, setIsUser] = useState(true)
+    const dispatch = useDispatch();
+    const loginError = useSelector(state => state.auth.loginError);
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const formRef = useRef(null);
+
+    useEffect(() => {
+      if (isAuthenticated) {
+        navigate(ROUTES.HOME);
+      }
+    }, [isAuthenticated]);
+
+    useEffect(() => {
+      if(loginError) formRef.current.reset();
+    }, [loginError]);
 
     function handleSubmit(event){
         event.preventDefault();
 
         const form = event.target;
-        const enteredEmail = form.email.value;
-        const enteredPassword = form.password.value;
+        const email = form.email.value;
+        const password = form.password.value;
 
-        const userJSON = localStorage.getItem("user");
-        const user = userJSON ? JSON.parse(userJSON) : null;
-
-        if (user && enteredEmail === user.email && enteredPassword === user.password){
-          user.isAuthenticated = true;
-          localStorage.setItem("user", JSON.stringify(user));
-          setIsUser(true);
-          navigate(ROUTES.HOME);
-        } else {
-          setIsUser(false);
-          form.reset();
-        }
+        dispatch(authActions.login({email, password}));
     }
 
   return (
     <>
-    <form onSubmit={handleSubmit} className='login-form'>
+    <form ref={formRef} onSubmit={handleSubmit} className='login-form'>
         <div className='login-form__field'>
             <label htmlFor="login-email">Email</label>
             <input className='login-form__input' type="email" id='login-email' name='email' required/>
@@ -50,7 +54,7 @@ export default function RecipeCard() {
             <span>Don't have an account? <Link to={ROUTES.REGISTER} className="login-form__register">Register</Link></span>
           </div>
     </form>
-    <div className={`login-form__error ${isUser ? 'login-form__error-hidden' : ''}`}>
+    <div className={`login-form__error ${loginError ? '' : 'login-form__error-hidden'}`}>
       <span>There is no such user.</span>
     </div>
     </>

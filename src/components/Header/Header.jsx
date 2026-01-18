@@ -3,16 +3,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Header.css'
 import { ROUTES } from "@/configs/routesConfig";
 import userIcon from '@/icons/user.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions } from '@/store/authSlice';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const menuRef = useRef();
     const location = useLocation();
     const navigate = useNavigate();
-
-    const userJSON = localStorage.getItem("user");
-    const user = userJSON ? JSON.parse(userJSON) : null;
-    const isAuthenticated = user ? user.isAuthenticated : false;
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     useEffect(() => {
         function handleClickOutside(event){
@@ -34,12 +34,9 @@ export default function Header() {
     }
 
     function handleLogout(){
-        if (user){
-            user.isAuthenticated = false;
-            localStorage.setItem("user", JSON.stringify(user));
-            setIsMenuOpen(false);
-            navigate(ROUTES.LOGIN);
-        }
+        dispatch(authActions.logout());
+        setIsMenuOpen(false);
+        navigate(ROUTES.LOGIN);
     }
 
   return (
