@@ -1,7 +1,7 @@
 import { useNavigate, generatePath } from 'react-router-dom';
 import './RecipeCards.css'
 import { ROUTES } from "@/configs/routesConfig";
-import heartIcon from "@/icons/heart.svg"
+import Heart from './Heart';
 
 export default function RecipeCard({id, name, image, rating, difficulty, prepTimeMinutes, cookTimeMinutes, tags}) {
   const navigate = useNavigate();
@@ -22,9 +22,7 @@ export default function RecipeCard({id, name, image, rating, difficulty, prepTim
             <div>Cooking time: {prepTimeMinutes + cookTimeMinutes} minutes</div>
             <div className='recipe-card__tags'>{tags?.join(", ")}</div>
             <div className='recipe-card__heart-conteiner'>
-              <div>
-                  <img className='recipe-card__heart' src={heartIcon} alt="heart" />
-              </div>
+              <Heart className="recipe-card__heart" id={id}/>
             </div>
         </div>
     </div>

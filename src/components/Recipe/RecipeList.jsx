@@ -1,10 +1,7 @@
 import RecipeCard from './RecipeCard.jsx';
 import './RecipeCards.css'
-import { useGetRecipesQuery } from '../../services/recipesApi.js';
 
-export default function RecipeList() {
- const { data: recipes, isLoading } = useGetRecipesQuery();
-
+export default function RecipeList({ recipes, isLoading }) {
   return (
     <>
     {isLoading ? (

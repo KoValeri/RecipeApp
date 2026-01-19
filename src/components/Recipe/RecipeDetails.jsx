@@ -1,12 +1,11 @@
-import './RecipeDetailCard.css';
+import './RecipeDetails.css';
 import { useGetRecipeDetailQuery } from '../../services/recipesApi.js';
 import { useParams } from 'react-router-dom';
-import heartIcon from "@/icons/heart.svg";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/configs/routesConfig";
+import Heart from './Heart';
 
 export default function RecipeCard() {
     const { id } = useParams();
+    const numericId = Number(id);
     const { data: recipe, isLoading } = useGetRecipeDetailQuery(id);
 
     return (
@@ -54,9 +53,7 @@ export default function RecipeCard() {
                     </div>
 
                     <div>
-                        <div>
-                            <img className='recipe-detail__heart' src={heartIcon} alt="heart" />
-                        </div>
+                        <Heart className="recipe-detail__heart" id={numericId}/>
                     </div>
                 </div>
             )}

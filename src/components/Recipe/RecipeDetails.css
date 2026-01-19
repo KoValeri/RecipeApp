@@ -55,3 +55,7 @@ border-radius: 15px;
     height: 47px;
     cursor: pointer;
 }
+
+.favorite{
+    filter: brightness(1.5) saturate(7);
+}

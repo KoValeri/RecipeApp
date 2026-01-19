@@ -5,6 +5,7 @@ import { ROUTES } from "@/configs/routesConfig";
 import userIcon from '@/icons/user.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '@/store/authSlice';
+import { favsActions } from '@/store/favsSlice';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,6 +36,7 @@ export default function Header() {
 
     function handleLogout(){
         dispatch(authActions.logout());
+        dispatch(favsActions.clearFavorites());
         setIsMenuOpen(false);
         navigate(ROUTES.LOGIN);
     }
