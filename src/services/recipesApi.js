@@ -6,7 +6,9 @@ export const recipesApi = createApi({
   endpoints: (builder) => ({
     getRecipes: builder.query({
       query: () => '/recipes',
-      transformResponse: (response) => response.recipes
+      transformResponse: (response) => response.recipes.map(recipe => ({
+        ...recipe, isFavorite: false
+      }))
     }),
     getRecipeDetail: builder.query({
       query: (id) => `/recipes/${id}`

@@ -1,16 +1,24 @@
 import hollowHeart from "@/assets/icons/hollowHeart.png"
 import fullHeart from "@/assets/icons/fullHeart.png"
-import { useDispatch, useSelector } from 'react-redux';
-import { favsActions } from '@/store/favsSlice';
+import { useDispatch } from 'react-redux';
 import './FavRecipeButton.css'
+import { recipesApi } from "../../services/recipesApi";
 
-export default function FavRecipeButton({ id, className }) {
+export default function FavRecipeButton({ id, className, isFavorite }) {
     const dispatch = useDispatch();
-    const isFavorite = useSelector(state => state.favs.ids.includes(id));
 
     function handleFavs(e){
         e.stopPropagation();
-        dispatch(favsActions.toggleRecipe(id));
+        dispatch(recipesApi.util.updateQueryData(
+            'getRecipes',
+            undefined,
+            (draft) => {
+                const recipe = draft.find(rec => rec.id === id);
+                if (recipe) {
+                    recipe.isFavorite = !recipe.isFavorite;
+                }
+            }
+        ));
     }
 
     return(

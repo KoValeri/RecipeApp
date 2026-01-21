@@ -1,12 +1,15 @@
 import './RecipeDetails.css';
-import { useGetRecipeDetailQuery } from '../../services/recipesApi.js';
+import { useGetRecipesQuery, useGetRecipeDetailQuery } from '../../services/recipesApi.js';
 import { useParams } from 'react-router-dom';
 import FavRecipeButton from '../FavRecipeButton/FavRecipeButton.jsx';
 
 export default function RecipeCard() {
     const { id } = useParams();
-    const numericId = Number(id);
+    const numbericId = Number(id);
+    const { data: recipes = [] } = useGetRecipesQuery();
     const { data: recipe, isLoading } = useGetRecipeDetailQuery(id);
+
+    const isFavorite = recipes.find(r => r.id === numbericId)?.isFavorite ?? false;
 
     return (
         <>
@@ -53,7 +56,7 @@ export default function RecipeCard() {
                     </div>
 
                     <div>
-                        <FavRecipeButton className="recipe-detail__heart" id={numericId}/>
+                        <FavRecipeButton className="recipe-detail__heart" id={numbericId} isFavorite={isFavorite}/>
                     </div>
                 </div>
             )}
