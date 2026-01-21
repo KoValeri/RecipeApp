@@ -51,30 +51,49 @@
 }
 
 .header__userMenu{
+    font-family: HYWenHei;
     position: absolute;
     border: 3px solid #3e2c1e;
     background-color: #fd974f;
-    height: 125px;
-    width: 105px;
     border-radius: 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5px;
-    justify-content: space-evenly;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin: 0;
+    list-style: none;
+    width: 145px;
+    height: 100px;
+    right: 0;
+    top: 45px;
     display: none;
-    right: 0; 
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    justify-content: center;
 }
 
 .header__userMenu.open{
     display: flex;
 }
 
-.header__userMenu button{
-    font-size: 16px;
-    cursor: pointer;
+.header__userMenu li{
+    width: 100%;
+}
+
+.header__userMenu li a,
+.header__userMenu li button{
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 18px;
     font-family: inherit;
     color: #3e2c1e;
-    background-color: #fd974f;
+    background-color: transparent;
     border: none;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__userMenu li a:hover,
+.header__userMenu li button:hover{
+    background-color: #f8b788;
 }

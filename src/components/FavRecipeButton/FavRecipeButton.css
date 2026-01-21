@@ -1,0 +1,11 @@
+.recipe-card__heart{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.recipe-detail__heart{
+    width: 47px;
+    height: 47px;
+    cursor: pointer;
+}

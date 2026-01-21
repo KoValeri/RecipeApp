@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import RootLayout from "@/pages/RootLayout";
-import HomePage from "@/pages/HomePage";
+import HomePage from "@/pages/Home/HomePage";
 import LoginPage from '@/pages/LoginPage';
 import RecipePage from '@/pages/RecipePage';
 import RegisterPage from "@/pages/RegisterPage";

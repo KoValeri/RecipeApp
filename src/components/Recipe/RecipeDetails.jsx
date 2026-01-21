@@ -1,7 +1,7 @@
 import './RecipeDetails.css';
 import { useGetRecipeDetailQuery } from '../../services/recipesApi.js';
 import { useParams } from 'react-router-dom';
-import Heart from './Heart';
+import FavRecipeButton from '../FavRecipeButton/FavRecipeButton.jsx';
 
 export default function RecipeCard() {
     const { id } = useParams();
@@ -53,7 +53,7 @@ export default function RecipeCard() {
                     </div>
 
                     <div>
-                        <Heart className="recipe-detail__heart" id={numericId}/>
+                        <FavRecipeButton className="recipe-detail__heart" id={numericId}/>
                     </div>
                 </div>
             )}

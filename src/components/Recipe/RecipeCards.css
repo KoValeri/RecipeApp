@@ -20,6 +20,7 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #fef2e4;
+    cursor: pointer;
 }
 
 .recipe-card:hover{
@@ -32,7 +33,6 @@
     width: 100%;
     height: 245px;
     object-fit: cover;
-    cursor: pointer;
 }
 
 .recipe-card__info{
@@ -67,14 +67,4 @@
 .recipe-card__heart-conteiner{
     display: flex;
     justify-content: flex-end;
-}
-
-.recipe-card__heart{
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.favorite{
-    filter: brightness(1.5) saturate(7);
 }

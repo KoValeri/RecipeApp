@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Header.css'
 import { ROUTES } from "@/configs/routesConfig";
-import userIcon from '@/icons/user.png';
+import userIcon from '@/assets/icons/user.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '@/store/authSlice';
 import { favsActions } from '@/store/favsSlice';
@@ -59,10 +59,14 @@ export default function Header() {
                             <>
                                 <img src={userIcon} alt="userIcon" className="header__userIcon" onClick={toggleMenu}/>
 
-                                <div className={`header__userMenu ${ isMenuOpen ? "open" : "" }`}>
-                                    <Link to={ROUTES.FAVORITES}>Favorites</Link>
-                                    <button onClick={handleLogout}>Logout</button>
-                                </div>
+                                <ul className={`header__userMenu ${isMenuOpen ? "open" : ""}`}>
+                                    <li>
+                                        <Link to={ROUTES.FAVORITES}>Favorites</Link>
+                                    </li>
+                                    <li>
+                                        <button onClick={handleLogout}>Logout</button>
+                                    </li>
+                                </ul>
                             </>
                         ) : (
                             <Link to={ROUTES.LOGIN}>Login</Link>

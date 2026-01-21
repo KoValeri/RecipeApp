@@ -51,12 +51,7 @@ border-radius: 15px;
     margin-bottom: 15px;
 }
 
-.recipe-detail__heart{
-    width: 47px;
-    height: 47px;
-    cursor: pointer;
-}
-
-.favorite{
-    filter: brightness(1.5) saturate(7);
+.recipe-card__heart-conteiner{
+    display: flex;
+    justify-content: flex-end;
 }
