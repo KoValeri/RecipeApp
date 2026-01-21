@@ -3,7 +3,7 @@
   src: url("../../../public/HYWenHei/HYWenHei.ttf");
 }
 
-.login-page__container{
+.auth-page__container{
     background-color: #fd974f;
     height: 100vh;
     margin: 0;
@@ -15,21 +15,21 @@
     flex-direction: column;
 }
 
-.login-form{
+.auth-form{
     border: 2px solid #fef2e4;
     border-radius: 12px;
     padding: 24px;
     font-size: 22px;
 }
 
-.login-form__field{
+.auth-form__field{
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
     align-items: center;
 }
 
-.login-form__input{
+.auth-form__input{
     width: 250px;
     font-size: 20px;
     border: none;
@@ -40,12 +40,12 @@
     margin-left: 30px;
 }
 
-.login-form__button{
+.auth-form__button{
     display: flex;
     justify-content: center;
 }
 
-.login-form__button button{
+.auth-form__button button{
     border-radius: 15px;
     font-size: 22px;
     cursor: pointer;
@@ -58,7 +58,7 @@
     margin-bottom: 25px;
 }
 
-.login-form__register{
+.auth-form__redirection{
     color: #fef2e4;
     text-decoration: underline;
 }

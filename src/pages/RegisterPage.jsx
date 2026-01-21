@@ -1,11 +1,10 @@
-import RegisterForm from "@/components/Register/RegisterForm.jsx";
-import '@/components/Register/RegisterForm.css'
-import '@/components/Login/LoginForm.css'
+import AuthForm from "@/components/Auth/AuthForm.jsx";
+import '@/components/Auth/AuthForm.css'
 
 export default function RegisterPage() {
   return (
-    <main className="login-page__container">
-      <RegisterForm />
+    <main className="auth-page__container">
+      <AuthForm type="register" />
     </main>
   );
 }

@@ -1,10 +1,10 @@
-import LoginForm from "../components/Login/LoginForm";
-import '../components/Login/LoginForm.css'
+import AuthForm from "@/components/Auth/AuthForm.jsx";
+import '@/components/Auth/AuthForm.css'
 
 export default function LoginPage() {
   return (
-    <main className="login-page__container">
-      <LoginForm />
+    <main className="auth-page__container">
+      <AuthForm type="login" />
     </main>
   );
 }
