@@ -5,6 +5,7 @@ import { ROUTES } from "@/configs/routesConfig";
 import userIcon from '@/assets/icons/user.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '@/store/authSlice';
+import { searchActions } from '@/store/searchSlice';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,6 +14,7 @@ export default function Header() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const search = useSelector(state => state.search.query);
 
     useEffect(() => {
         function handleClickOutside(event){
@@ -47,7 +49,9 @@ export default function Header() {
             <input className='header__search'
             name="search"
             type="text"
-            placeholder="Search recipes..." 
+            placeholder="Search recipes..."
+            value={search}
+            onChange={(e) => {dispatch(searchActions.setQuery(e.target.value))}}
             />
 
             <nav className="header__nav">

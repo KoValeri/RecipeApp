@@ -1,9 +1,13 @@
 import "./HomePage.css";
 import RecipeList from "@/components/Recipe/RecipeList";
 import { useGetRecipesQuery } from '@/services/recipesApi.js';
+import { useSelector } from 'react-redux';
+import { filterRecipesBySearch } from "@/utils/searchUtils";
 
 export default function HomePage() {
-   const { data: recipes, isLoading } = useGetRecipesQuery();
+  const { data: recipes, isLoading } = useGetRecipesQuery();
+  const search = useSelector(state => state.search.query);
+  const searchedRecipes = filterRecipesBySearch(recipes, search);
 
   return (
     <>
@@ -12,7 +16,11 @@ export default function HomePage() {
             <br />
             <p className="promo-block__subtitle">Every recipe tells a story — let’s cook the ones you’ll want to remember.</p>
         </div>
-      <RecipeList recipes={recipes} isLoading={isLoading}/>
+      {search && searchedRecipes.length === 0 ? (
+        <div style={{textAlign: 'center'}}>No recipe found...</div>
+        ) : (
+          <RecipeList recipes={searchedRecipes} isLoading={isLoading}/>
+        )}
     </>
   );
 }
