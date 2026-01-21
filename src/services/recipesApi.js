@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const recipesApi = createApi({
   reducerPath: 'recipesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.API_BASE_URL }),
   endpoints: (builder) => ({
     getRecipes: builder.query({
       query: () => '/recipes',

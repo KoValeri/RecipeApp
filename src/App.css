@@ -13,7 +13,7 @@ body {
 main {
   margin-top: 40px;
   margin-bottom: 30px;
-  max-width: 1200px;
+  max-width: 1700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -27,4 +27,10 @@ ul {
 a, li{
   text-decoration: none;
   color: #3e2c1e;
+}
+
+@media (min-width: 1700px) {
+  body {
+    font-size: 18px;
+  }
 }
