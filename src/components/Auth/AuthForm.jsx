@@ -43,7 +43,7 @@ export default function AuthForm({type = 'login'}) {
     <form ref={formRef} onSubmit={handleSubmit} className='auth-form'>
         <div className='auth-form__field'>
             <label htmlFor="auth-email">Email</label>
-            <input className='auth-form__input' type="email" id='login-email' name='email' required/>
+            <input className='auth-form__input' type="email" id='auth-email' name='email' required/>
         </div>
 
         <div className='auth-form__field'>
