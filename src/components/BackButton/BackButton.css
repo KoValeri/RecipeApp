@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "HYWenHei";
+  src: url("../../../public/HYWenHei/HYWenHei.ttf");
+}
+
+.back-button{
+    border-radius: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    width: 110px;
+    height: 50px;
+    color: #3e2c1e;
+    font-family: HYWenHei;
+    background-color: #fef2e4;
+    border: none;
+    margin-bottom: 25px;
+}

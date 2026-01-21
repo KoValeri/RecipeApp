@@ -1,4 +1,5 @@
 import RecipeList from "@/components/Recipe/RecipeList";
+import BackButton from "../components/BackButton/BackButton";
 import { useGetRecipesQuery } from '@/services/recipesApi.js';
 import { useSelector } from 'react-redux';
 
@@ -9,6 +10,7 @@ export default function FavoritesPage() {
 
   return (
     <>
+      <BackButton />
       {favsIds.length ? (
         <RecipeList recipes={favsRecipes} isLoading={isLoading}/>
         
