@@ -1,7 +1,7 @@
 import './RecipeDetails.css';
-import { useGetRecipesQuery, useGetRecipeDetailQuery } from '../../services/recipesApi.js';
+import { useGetRecipesQuery, useGetRecipeDetailQuery } from '@/services/recipesApi.js';
 import { useParams } from 'react-router-dom';
-import FavRecipeButton from '../FavRecipeButton/FavRecipeButton.jsx';
+import FavRecipeButton from '@/components/FavRecipeButton/FavRecipeButton.jsx';
 
 export default function RecipeCard() {
     const { id } = useParams();

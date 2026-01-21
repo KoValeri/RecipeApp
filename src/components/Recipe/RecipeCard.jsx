@@ -1,7 +1,7 @@
 import { useNavigate, generatePath } from 'react-router-dom';
 import './RecipeCards.css'
 import { ROUTES } from "@/configs/routesConfig";
-import FavRecipeButton from '../FavRecipeButton/FavRecipeButton';
+import FavRecipeButton from '@/components/FavRecipeButton/FavRecipeButton';
 
 export default function RecipeCard({id, name, image, rating, difficulty, prepTimeMinutes, cookTimeMinutes, tags, isFavorite}) {
   const navigate = useNavigate();
