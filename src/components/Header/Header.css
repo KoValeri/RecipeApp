@@ -40,6 +40,10 @@
     gap: 20px;
 }
 
+.header__links li a{
+    font-size: 18px;
+}
+
 .header__user{
     position: relative;
 }

@@ -2,12 +2,14 @@ import './RecipeDetails.css';
 import { useGetRecipesQuery, useGetRecipeDetailQuery } from '@/services/recipesApi.js';
 import { useParams } from 'react-router-dom';
 import FavRecipeButton from '@/components/FavRecipeButton/FavRecipeButton.jsx';
+import { useSelector } from 'react-redux';
 
 export default function RecipeCard() {
     const { id } = useParams();
     const numbericId = Number(id);
     const { data: recipes = [] } = useGetRecipesQuery();
     const { data: recipe, isLoading } = useGetRecipeDetailQuery(id);
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     const isFavorite = recipes.find(r => r.id === numbericId)?.isFavorite ?? false;
 
@@ -56,7 +58,7 @@ export default function RecipeCard() {
                     </div>
 
                     <div>
-                        <FavRecipeButton className="recipe-detail__heart" id={numbericId} isFavorite={isFavorite}/>
+                        {isAuthenticated && <FavRecipeButton className="recipe-detail__heart" id={numbericId} isFavorite={isFavorite}/>}
                     </div>
                 </div>
             )}

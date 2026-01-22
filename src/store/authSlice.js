@@ -34,6 +34,7 @@ const authSlice = createSlice({
     logout(state) {
         state.loginError = false;
         state.isAuthenticated = false;
+        setUser({ ...state.user, isAuthenticated: false });
     },
   },
 });
