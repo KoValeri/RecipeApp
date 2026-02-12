@@ -1,5 +1,5 @@
 import './RecipeDetails.css';
-import { useGetRecipesQuery, useGetRecipeDetailQuery } from '@/services/recipesApi.js';
+import { useGetRecipesQuery, useGetRecipeDetailQuery } from '@/api/recipesApi.js';
 import { useParams } from 'react-router-dom';
 import FavRecipeButton from '@/components/FavRecipeButton/FavRecipeButton.jsx';
 import { useSelector } from 'react-redux';

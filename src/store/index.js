@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { recipesApi } from '@/services/recipesApi';
+import { recipesApi } from '@/api/recipesApi';
 import authReducer from './authSlice';
 import searchReducer from './searchSlice';
 
