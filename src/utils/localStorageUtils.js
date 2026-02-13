@@ -1,18 +1,18 @@
-export function getUser() {
+export function getFromStorage(key) {
   try {
-    const user = localStorage.getItem('user');
-    if (!user) return null;
-    return JSON.parse(user);
+    const data = localStorage.getItem(key);
+    if (!data) return null;
+    return JSON.parse(data);
   } catch (err) {
-    console.error("Ошибка чтения из localStorage:", err);
+    console.error("Error, can't read from local storage:", err);
     return null;
   }
 }
 
-export function setUser(userObj) {
+export function setToStorage(key, obj) {
   try {
-    localStorage.setItem('user', JSON.stringify(userObj));
+    localStorage.setItem(key, JSON.stringify(obj));
   } catch (err) {
-    console.error("Ошибка записи в localStorage:", err);
+    console.error("Error, can't write in local srotage:", err);
   }
 }

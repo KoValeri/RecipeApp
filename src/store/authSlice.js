@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUser, setUser } from '@/utils/localStorageUtils';
+import { getFromStorage, setToStorage } from '@/utils/localStorageUtils';
+import { KEYS } from '@/configs/localStorageConfigs';
 
-const storedUser = getUser();
+const storedUser = getFromStorage(KEYS.USER);
 
 const initialState = {
   user: storedUser ? { email: storedUser.email, password: storedUser.password } : null,
@@ -18,14 +19,14 @@ const authSlice = createSlice({
         state.isAuthenticated = false;
         state.loginError = false;
 
-        setUser({ ...action.payload, isAuthenticated: false });
+        setToStorage( KEYS.USER, { ...action.payload, isAuthenticated: false } );
     },
     login(state, action) {
         const {email, password} = action.payload;
 
         if (state.user && email === state.user.email && password === state.user.password){
           state.isAuthenticated = true;
-          setUser({ ...state.user, isAuthenticated: true });
+          setToStorage( KEYS.USER, { ...state.user, isAuthenticated: true } );
           state.loginError = false;
         } else {
             state.loginError = true
@@ -34,7 +35,7 @@ const authSlice = createSlice({
     logout(state) {
         state.loginError = false;
         state.isAuthenticated = false;
-        setUser({ ...state.user, isAuthenticated: false });
+        setToStorage( KEYS.USER, { ...state.user, isAuthenticated: false } );
     },
   },
 });
