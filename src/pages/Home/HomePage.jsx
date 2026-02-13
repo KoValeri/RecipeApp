@@ -1,12 +1,14 @@
 import "./HomePage.css";
 import RecipeList from "@/components/Recipe/RecipeList";
 import { useGetRecipesQuery } from '@/api/recipesApi.js';
-import { useSelector } from 'react-redux';
 import { filterRecipesBySearch } from "@/utils/searchUtils";
+import { useSearchParams } from "react-router-dom";
 
 export default function HomePage() {
   const { data: recipes, isLoading } = useGetRecipesQuery();
-  const search = useSelector(state => state.search.query);
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get("search") || "";
+  
   const searchedRecipes = filterRecipesBySearch(recipes, search);
 
   return (

@@ -1,13 +1,15 @@
 import RecipeList from "@/components/Recipe/RecipeList";
 import BackButton from "@/components/BackButton/BackButton";
 import { useGetRecipesQuery } from '@/api/recipesApi.js';
-import { useSelector } from 'react-redux';
 import { filterRecipesBySearch } from "@/utils/searchUtils";
+import { useSearchParams } from "react-router-dom";
 
 export default function FavoritesPage() {
   const { data: recipes = [], isLoading } = useGetRecipesQuery();
   const favsRecipes = recipes.filter(recipe => recipe.isFavorite);
-  const search = useSelector(state => state.search.query);
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get("search") || "";
+
   const searchedRecipes = filterRecipesBySearch(favsRecipes, search);
 
   return (
