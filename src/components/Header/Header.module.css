@@ -10,7 +10,7 @@
     height: 80px;
 }
 
-.header__container{
+.headerContainer{
     display: flex;
     align-items: center;
     height: 100%;
@@ -18,13 +18,13 @@
     padding: 0px 20px;
 }
 
-.header__title{
+.headerTitle{
     font-family: HYWenHei;
     font-weight: bold;
     font-size: 20px;
 }
 
-.header__search{
+.headerSearch{
     width: 50%;
     border: none;
     border-radius: 19px;
@@ -35,26 +35,26 @@
     background-color: #fef2e4;
 }
 
-.header__links{
+.headerLinks{
     display: flex;
     gap: 20px;
 }
 
-.header__links li a{
+.headerLinks li a{
     font-size: 18px;
 }
 
-.header__user{
+.headerUser{
     position: relative;
 }
 
-.header__userIcon{
+.headerUserIcon{
     width: 37px;
     height: 37px;
     cursor: pointer;
 }
 
-.header__userMenu{
+.headerUserMenu{
     font-family: HYWenHei;
     position: absolute;
     border: 3px solid #3e2c1e;
@@ -73,16 +73,16 @@
     justify-content: center;
 }
 
-.header__userMenu.open{
+.headerUserMenuOpen{
     display: flex;
 }
 
-.header__userMenu li{
+.headerUserMenu li{
     width: 100%;
 }
 
-.header__userMenu li a,
-.header__userMenu li button{
+.headerUserMenu li a,
+.headerUserMenu li button{
     display: block;
     border-radius: 8px;
     width: 100%;
@@ -97,7 +97,7 @@
     text-decoration: none;
 }
 
-.header__userMenu li a:hover,
-.header__userMenu li button:hover{
+.headerUserMenu li a:hover,
+.headerUserMenu li button:hover{
     background-color: #f8b788;
 }

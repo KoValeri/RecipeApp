@@ -3,14 +3,7 @@
   src: url("../../../public/HYWenHei/HYWenHei.ttf");
 }
 
-.recipe-list__cards{
-    display: flex;
-    gap: 70px 90px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.recipe-card{
+.recipeCard{
     width: 340px;
     height: 405px;
     border-radius: 15px;
@@ -23,19 +16,19 @@
     cursor: pointer;
 }
 
-.recipe-card:hover{
+.recipeCard:hover{
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     transform: translateY(-2px);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.recipe-card__image {
+.recipeCardImage {
     width: 100%;
     height: 245px;
     object-fit: cover;
 }
 
-.recipe-card__info{
+.recipeCardInfo{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -43,28 +36,33 @@
     padding: 10px;
 }
 
-.recipe-card__title{
+.recipeCardTitle{
     font-weight: bold;
     font-size: 18px;
     font-family: HYWenHei;
 }
 
-.recipe-card__meta{
+.recipeCardMeta{
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
 }
 
-.recipe-card__rating{
+.recipeCardRating{
     color: #fd974f;
 }
 
-.recipe-card__tags{
+.recipeCardTags{
     font-size: 0.75em;
     color: #805a3b; 
 }
 
-.recipe-card__heart-conteiner{
+.recipeCardHeartConteiner{
     display: flex;
     justify-content: flex-end;
+}
+
+.recipeCardHeart {
+    width: 30px;
+    height: 30px;
 }

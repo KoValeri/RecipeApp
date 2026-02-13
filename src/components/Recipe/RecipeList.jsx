@@ -1,5 +1,5 @@
 import RecipeCard from './RecipeCard.jsx';
-import './RecipeCards.css'
+import styles from './RecipeList.module.css';
 
 export default function RecipeList({ recipes, isLoading }) {
   return (
@@ -7,7 +7,7 @@ export default function RecipeList({ recipes, isLoading }) {
     {isLoading ? (
         <p>Loading...</p>
     ) : (
-        <div className='recipe-list__cards'>
+        <div className={styles.recipeList}>
             {recipes.map(recipe => (
                 <RecipeCard 
                 key={recipe.id}

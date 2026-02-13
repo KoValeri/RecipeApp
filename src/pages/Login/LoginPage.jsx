@@ -1,9 +1,9 @@
 import AuthForm from "@/components/Auth/AuthForm.jsx";
-import '@/components/Auth/AuthForm.css'
+import styles from "./LoginPage.module.css";
 
 export default function LoginPage() {
   return (
-    <main className="auth-page__container">
+    <main className={styles.container}>
       <AuthForm type="login" />
     </main>
   );

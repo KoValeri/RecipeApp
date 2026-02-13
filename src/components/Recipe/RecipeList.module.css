@@ -1,0 +1,6 @@
+.recipeList{
+    display: flex;
+    gap: 70px 90px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

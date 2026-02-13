@@ -1,0 +1,11 @@
+.container{
+    background-color: #fd974f;
+    height: 100vh;
+    margin: 0;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: HYWenHei;
+    flex-direction: column;
+}

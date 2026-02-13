@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from "@/pages/RootLayout";
 import HomePage from "@/pages/Home/HomePage";
-import LoginPage from '@/pages/LoginPage';
+import LoginPage from '@/pages/Login/LoginPage';
 import RecipeDetailsPage from '@/pages/RecipeDetailsPage';
-import RegisterPage from "@/pages/RegisterPage";
+import RegisterPage from "@/pages/Register/RegisterPage";
 import FavoritesPage from "@/pages/FavoritesPage";
 import { ROUTES } from "@/configs/routesConfig";
 import PrivateRoute from "@/router/PrivateRoute";

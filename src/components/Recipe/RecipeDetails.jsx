@@ -1,10 +1,10 @@
-import './RecipeDetails.css';
+import styles from './RecipeDetails.module.css'
 import { useGetRecipesQuery, useGetRecipeDetailQuery } from '@/api/recipesApi.js';
 import { useParams } from 'react-router-dom';
 import FavRecipeButton from '@/components/FavRecipeButton/FavRecipeButton.jsx';
 import { useSelector } from 'react-redux';
 
-export default function RecipeCard() {
+export default function RecipeDetails() {
     const { id } = useParams();
     const numbericId = Number(id);
     const { data: recipes = [] } = useGetRecipesQuery();
@@ -18,20 +18,20 @@ export default function RecipeCard() {
             {isLoading ? (
                 <p>Loading...</p>
             ) : (
-                <div className='recipe-detail'>
-                    <div className='recipe-detail__main'>
+                <div className={styles.recipeDetail}>
+                    <div className={styles.recipeDetailMain}>
 
-                        <div className='recipe-detail__img-container'>
-                            <img className='recipe-detail__img' src={recipe.image} alt={recipe.name} />
+                        <div className={styles.recipeDetailImgContainer}>
+                            <img className={styles.recipeDetailImg} src={recipe.image} alt={recipe.name} />
                         </div>
 
                         <div>
-                            <h2 className='recipe-detail__name'>{recipe.name} 
-                                <span className='recipe-detail__rating'>★{recipe.rating}</span>
+                            <h2 className={styles.recipeDetailName}>{recipe.name} 
+                                <span className={styles.recipeDetailRating}>★{recipe.rating}</span>
                             </h2>
                             <div>
-                                <span className='recipe-detail__title'>Ingredients:</span>
-                                <ul className='recipe-detail__ingredients'>
+                                <span className={styles.recipeDetailTitle}>Ingredients:</span>
+                                <ul className={styles.recipeDetailIngredients}>
                                     {recipe.ingredients.map(ingredient => (
                                         <li key={ingredient}>{ingredient}</li>
                                     ))}
@@ -48,17 +48,17 @@ export default function RecipeCard() {
                     </div>
 
                     <div>
-                        <span className='recipe-detail__title'>Tags: </span>
+                        <span className={styles.recipeDetailTitle}>Tags: </span>
                         <span>{recipe.tags?.join(", ")}</span>
                     </div>
 
                     <div>
-                         <span className='recipe-detail__title'>Instruction:</span>
+                         <span className={styles.recipeDetailTitle}>Instruction:</span>
                          <div>{recipe.instructions.join(" ")}</div>
                     </div>
 
                     <div>
-                        {isAuthenticated && <FavRecipeButton className="recipe-detail__heart" id={numbericId} isFavorite={isFavorite}/>}
+                        {isAuthenticated && <FavRecipeButton className={styles.recipeDetailHeart} id={numbericId} isFavorite={isFavorite}/>}
                     </div>
                 </div>
             )}

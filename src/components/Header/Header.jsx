@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import './Header.css'
+import styles from './Header.module.css'
 import { ROUTES } from "@/configs/routesConfig";
 import userIcon from '@/assets/icons/user.png';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,11 +53,11 @@ export default function Header() {
     }
 
   return (
-    <header className='header'>
-        <div className='header__container'>
-            <Link className='header__title'>Recipes</Link>
+    <header className={styles.header}>
+        <div className={styles.headerContainer}>
+            <Link className={styles.headerTitle}>Recipes</Link>
 
-            <input className='header__search'
+            <input className={styles.headerSearch}
             name="search"
             type="text"
             placeholder="Search recipes..."
@@ -65,14 +65,14 @@ export default function Header() {
             onChange={handleSearchChange}
             />
 
-            <nav className="header__nav">
-                <ul className="header__links">
-                    <li ref={menuRef} className="header__user">
+            <nav>
+                <ul className={styles.headerLinks}>
+                    <li ref={menuRef} className={styles.headerUser}>
                         {isAuthenticated ? (
                             <>
-                                <img src={userIcon} alt="userIcon" className="header__userIcon" onClick={toggleMenu}/>
+                                <img src={userIcon} alt="userIcon" className={styles.headerUserIcon} onClick={toggleMenu}/>
 
-                                <ul className={`header__userMenu ${isMenuOpen ? "open" : ""}`}>
+                                <ul className={`${styles.headerUserMenu} ${isMenuOpen ? styles.headerUserMenuOpen : ""}`}>
                                     <li>
                                         <Link to={ROUTES.FAVORITES}>Favorites</Link>
                                     </li>

@@ -1,7 +1,7 @@
 import hollowHeart from "@/assets/icons/hollowHeart.png"
 import fullHeart from "@/assets/icons/fullHeart.png"
 import { useDispatch } from 'react-redux';
-import './FavRecipeButton.css'
+import styles from './FavRecipeButton.module.css'
 import { recipesApi } from "@/api/recipesApi";
 
 export default function FavRecipeButton({ id, className, isFavorite }) {
@@ -22,6 +22,6 @@ export default function FavRecipeButton({ id, className, isFavorite }) {
     }
 
     return(
-        <img className={`${className}`} src={isFavorite ? fullHeart : hollowHeart} alt="heart" onClick={handleFavs}/>
+        <img className={`${styles.favButton} ${className || ''}`} src={isFavorite ? fullHeart : hollowHeart} alt="heart" onClick={handleFavs}/>
     );
 }

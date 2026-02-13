@@ -1,9 +1,9 @@
 import AuthForm from "@/components/Auth/AuthForm.jsx";
-import '@/components/Auth/AuthForm.css'
+import styles from './RegisterPage.module.css'
 
 export default function RegisterPage() {
   return (
-    <main className="auth-page__container">
+    <main className={styles.container}>
       <AuthForm type="register" />
     </main>
   );

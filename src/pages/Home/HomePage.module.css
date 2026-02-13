@@ -3,17 +3,17 @@
   src: url("../../../public/HYWenHei/HYWenHei.ttf");
 }
 
-.promo-block{
+.promoBlock{
     display: flex;
     text-align: center;
     flex-direction: column;
     margin-bottom: 40px;
 }
 
-.promo-block__title{
+.promoBlockTitle{
     font-family: HYWenHei;
 }
 
-.promo-block__subtitle{
+.promoBlockSubtitle{
     font-size: 18px;
 }
