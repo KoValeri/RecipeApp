@@ -8,7 +8,7 @@ export default function RecipeList({ recipes, isLoading }) {
         <p>Loading...</p>
     ) : (
         <div className={styles.recipeList}>
-            {recipes.map(recipe => (
+            {recipes?.map(recipe => (
                 <RecipeCard 
                 key={recipe.id}
                 id={recipe.id} 
