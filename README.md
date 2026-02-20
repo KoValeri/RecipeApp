@@ -32,4 +32,4 @@ cd your-repository
 ```
 
 ## Deploy
-...
+https://sunny-salmiakki-479b51.netlify.app/
