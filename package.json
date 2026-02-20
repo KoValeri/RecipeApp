@@ -1,4 +1,8 @@
 {
+  "name": "RecipeApp",
+  "version": "1.0.0",
+  "homepage": "https://kovaleri.github.io/RecipeApp/",
+  "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "react": "^19.2.3",
